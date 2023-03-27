@@ -32,13 +32,23 @@
 		<label for="name">Nombre:</label><br>
 		<input type="text" id="name" name="name" required><br>
 
-		<label for="email">Email:</label><br>
-		<input type="email" id="email" name="email" required><br>
+		<label for="coordinador">Coordinador:</label><br>
+		<input type="text" id="Coordinador" name="Coordinador" required><br>
 
-		<label for="phone">Teléfono:</label><br>
-		<input type="tel" id="phone" name="phone" required><br>
+		<label for="pais">Country:</label><br>
+		<input type="text" id="Country" name="Country" required><br>
+
+        <label for="quien_reporta">Quien reporta:</label><br>
+		<input type="text" id="quien_reporta" name="quien_reporta" required><br>
+
+		<label for="venture">Venture:</label><br>
+		<input type="text" id="venture" name="venture" required><br>
+
+		<label for="Hora">hora reporta:</label><br>
+		<input type="time" id="hora" name="hora" required><br>
 
 		<button type="submit">Guardar</button>
+        
 	</form>
 
 	<h2>Registros guardados</h2>
@@ -47,6 +57,32 @@
 		<ul id="records-list"></ul>
 	</div>
 	
-	<script src="script.js"></script>
+	<script>
+		const form = document.querySelector('form');
+		const recordsList = document.querySelector('#records-list');
+
+		form.addEventListener('submit', (event) => {
+		  event.preventDefault(); // Prevenir la recarga de la página al enviar el formulario
+
+		  // Obtener valores de los campos del formulario
+		  const name = document.querySelector('#name').value;
+		  const coordinador = document.querySelector('#Coordinador').value;
+		  const country = document.querySelector('#Country').value;
+		  const quien_reporta = document.querySelector('#quien_reporta').value;
+		  const venture = document.querySelector('#venture').value;
+		  const hora = document.querySelector('#hora').value;
+
+		  // Crear elemento li y agregar texto con los valores del formulario
+		  const recordItem = document.createElement('li');
+		  const recordText = document.createTextNode(`${name}, ${coordinador}, ${country}, ${quien_reporta}, ${venture}, ${hora}`);
+		  recordItem.appendChild(recordText);
+
+		  // Agregar elemento li a la lista de registros
+		  recordsList.appendChild(recordItem);
+
+		  // Limpiar campos del formulario
+		  form.reset();
+		});
+	</script>
 </body>
 </html>
