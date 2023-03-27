@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 	// Agregar cada registro a la lista de registros
 	records.forEach(record => {
 		const li = document.createElement('li');
-		li.textContent = `${record.name} (${record.country}, ${record.campaign}, ${record.venture}, ${record[coordinator-jr]}, ${record[report-hour]}, ${record.reporter})`;
+		li.textContent = `${record.name} (${record.email}, ${record.phone})`;
 		recordsList.appendChild(li);
 	});
 });
@@ -23,33 +23,37 @@ form.addEventListener('submit', event => {
 	const name = document.querySelector('#name').value;
 	const country = document.querySelector('#country').value;
 	const campaign = document.querySelector('#campaign').value;
-	const venture = document.querySelector('#venture').value;
-	const coordinatorJr = document.querySelector('#coordinator-jr').value
+    const venture = document.querySelector('#venture').value;
+	const coordinador = document.querySelector('#coordinator-jr').value;
+	const report = document.querySelector('#report').value;
+    const reporter = document.querySelector('#Quien reporta').value;
 
-    	// Crear un objeto de registro
+	// Crear un objeto de registro
 	const record = {
 		name: name,
 		country: country,
-		campaign: campaign,
-        venture: venture,
-        coordinadorJr: coordinatorJr
+		campaing : campaign,
+        venture : venture,
+        coordinador : coordinador,
+        report : report,
+        reporter : reporter
+
 	};
-    // Obtener los registros guardados del almacenamiento local
+
+	// Obtener los registros guardados del almacenamiento local
 	const records = JSON.parse(localStorage.getItem('records')) || [];
 
-    	// Agregar el nuevo registro a la lista de registros
+	// Agregar el nuevo registro a la lista de registros
 	records.push(record);
 
-    	// Guardar los registros en el almacenamiento local
+	// Guardar los registros en el almacenamiento local
 	localStorage.setItem('records', JSON.stringify(records));
 
-    	// Agregar el nuevo registro a la lista en la página
+	// Agregar el nuevo registro a la lista en la página
 	const li = document.createElement('li');
 	li.textContent = `${record.name} (${record.email}, ${record.phone})`;
 	recordsList.appendChild(li);
 
-
-
-    	// Limpiar el formulario
+	// Limpiar el formulario
 	form.reset();
 });
