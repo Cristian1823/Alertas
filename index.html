@@ -4,29 +4,64 @@
 	<meta charset="utf-8">
 	<title>Guardar registros</title>
 	<style>
+		body {
+			background-color: #f9b384;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-family: Arial, sans-serif;
+		}
 		form {
 			margin-bottom: 20px;
+			background-color: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 		}
 		input {
 			margin-bottom: 10px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		button {
+			padding: 5px 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #4CAF50;
+			color: white;
+			cursor: pointer;
 		}
 		#records {
-			border: 1px solid #ddd;
-			padding: 10px;
-			margin-bottom: 20px;
+			background-color: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			text-align: center;
 		}
 		#records ul {
 			padding: 0;
 			margin: 0;
 			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 		#records ul li {
-			margin-bottom: 5px;
+			margin: 5px;
+			padding: 10px;
+			background-color: #fff5ee;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+			min-width: 200px;
+			text-align: center;
+			font-size: 14px;
+			line-height: 1.5;
 		}
 	</style>
 </head>
 <body>
-	<h1>Guardar registros</h1>
+	<h1>Alertas GTR Falabella.com</h1>
 
 	<form>
 		<label for="name">Nombre:</label><br>
@@ -38,7 +73,7 @@
 		<label for="pais">Country:</label><br>
 		<input type="text" id="Country" name="Country" required><br>
 
-                <label for="quien_reporta">Quien reporta:</label><br>
+        <label for="quien_reporta">Quien reporta:</label><br>
 		<input type="text" id="quien_reporta" name="quien_reporta" required><br>
 
 		<label for="venture">Venture:</label><br>
