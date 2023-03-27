@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 	// Agregar cada registro a la lista de registros
 	records.forEach(record => {
 		const li = document.createElement('li');
-		li.textContent = `${record.name} (${record.country}, ${record.campaign}, ${record.venture}, ${record['coordinator-jr']}, ${record['report-hour']}, ${record.reporter})`;
+		li.textContent = `${record.name} (${record.country}, ${record.campaign}, ${record.venture}, ${record[coordinator-jr]}, ${record[report-hour]}, ${record.reporter})`;
 		recordsList.appendChild(li);
 	});
 });
@@ -48,7 +48,7 @@ form.addEventListener('submit', event => {
 	li.textContent = `${record.name} (${record.email}, ${record.phone})`;
 	recordsList.appendChild(li);
 
-    
+
 
     	// Limpiar el formulario
 	form.reset();
