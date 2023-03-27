@@ -41,21 +41,23 @@
 		<label for="venture">Venture:</label><br>
 		<input type="text" id="venture" name="venture" required><br>
 
-		<label for="coordinator">Coordinador Jr:</label><br>
-		<input type="text" id="coordinator" name="coordinator" required><br>
+		<label for="coordinator-jr">Coordinador Jr:</label><br>
+		<input type="text" id="coordinator-jr" name="coordinator-jr" required><br>
 
-		<label for="reporter">Quién reporta:</label><br>
+		<label for="report-hour">Hora Reporta:</label><br>
+		<input type="time" id="report-hour" name="report-hour" required><br>
+
+		<label for="reporter">Quien reporta:</label><br>
 		<input type="text" id="reporter" name="reporter" required><br>
-
-		<label for="time">Hora Reporta:</label><br>
-		<input type="time" id="time" name="time" required><br>
 
 		<button type="submit">Guardar</button>
 	</form>
 
 	<h2>Registros guardados</h2>
 
-	<div id="records"></div>
+	<div id="records">
+		<ul id="records-list"></ul>
+	</div>
 
 	<input type="file" id="file-input">
 	
